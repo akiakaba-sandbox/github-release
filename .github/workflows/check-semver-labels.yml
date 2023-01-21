@@ -8,6 +8,8 @@ on:
 
 jobs:
   check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
       - run: |
           [ ${{ contains(github.event.pull_request.labels.*.name, 'semver/*') }} == "true" ] || exit 1
