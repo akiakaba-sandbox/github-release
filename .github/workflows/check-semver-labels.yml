@@ -3,6 +3,7 @@ name: Check semver labels
 on:
   pull_request_target:
     types:
+      - opened
       - labeled
       - unlabeled
 
