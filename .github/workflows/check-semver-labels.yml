@@ -8,5 +8,6 @@ on:
 
 jobs:
   check:
-    - run: |
-        [ ${{ contains(github.event.pull_request.labels.*.name, 'semver/*') }} == "true" ] || exit 1
+    steps:
+      - run: |
+          [ ${{ contains(github.event.pull_request.labels.*.name, 'semver/*') }} == "true" ] || exit 1
