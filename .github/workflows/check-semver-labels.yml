@@ -12,4 +12,4 @@ jobs:
     timeout-minutes: 1
     steps:
       - run: |
-          [ ${{ contains(join(github.event.pull_request.labels.*.name, ','), 'semver/') }} == "true" ] || exit 1
+          ${{ contains(join(github.event.pull_request.labels.*.name, ','), 'semver/') }} || exit 1
