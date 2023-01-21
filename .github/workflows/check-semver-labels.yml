@@ -1,0 +1,12 @@
+name: Check semver labels
+
+on:
+  pull_request_target:
+    types:
+      - labeled
+      - unlabeled
+
+jobs:
+  check:
+    - run: |
+        [ ${{ contains(github.event.pull_request.labels.*.name, 'semver/*') }} == "true" ] || exit 1
